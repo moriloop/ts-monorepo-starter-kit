@@ -113,7 +113,9 @@ changeset with `pnpm changeset` when a publishable package changes.
   tag, or publish; Changesets updates versions, internal dependency ranges, and
   changelogs.
 - `pnpm version-packages` applies pending changesets; `pnpm release` builds and
-  publishes. The release workflow runs them through `changesets/action`.
+  publishes. The release workflow runs them through `changesets/action`, but only when
+  the repository variable `ENABLE_RELEASE` is `true`. Never enable it while package
+  names still use the `@repo` placeholder scope.
 - CI (`.github/workflows/build-typecheck-test.yml`) runs install, lint, typecheck,
   tests, and build on pushes and pull requests to `main`. Do not skip or weaken steps;
   fix the underlying failure.

@@ -203,7 +203,10 @@ Rules live in `commitlint.config.ts` and extend `@commitlint/config-conventional
 
 ## Release
 
-Releases are managed by Changesets:
+Releases are managed by Changesets and are opt-in for the starter template. Before
+enabling them, rename the `@repo` scope, add an `NPM_TOKEN` repository secret, and set
+the repository variable `ENABLE_RELEASE` to `true`. Until then, the release workflow
+is skipped so placeholder packages are never published.
 
 1. Run `pnpm changeset` and commit the generated Markdown file with your change.
 2. Push to `main`. The release workflow opens or updates a version PR.
@@ -218,7 +221,8 @@ changelogs.
 
 `.github/workflows/build-typecheck-test.yml` runs install, lint, typecheck, tests, and
 build on every push and pull request targeting `main`.
-`.github/workflows/release.yml` runs the Changesets release flow on `main`.
+`.github/workflows/release.yml` runs the Changesets release flow on `main`, gated by
+the `ENABLE_RELEASE` repository variable.
 
 ## License
 
