@@ -9,13 +9,8 @@ peerDependencyRules:
 shellEmulator: true
 
 packages:
-  - playground
-  - docs
   - packages/*
   - examples/*
-
-allowBuilds:
-  pnpm: true
 
 catalogs:
 
@@ -43,18 +38,11 @@ catalogs:
     eslint-plugin-sonarjs: ^4.2.2
 
   release:
-    changelogen: ^0.6.2
-    release-it: ^21.1.2
-    release-it-beautiful-changelog: ^0.2.1
+    '@changesets/cli': ^3.0.3
 
   test:
     '@vitest/coverage-v8': ^5.0.5
     vitest: ^5.0.5
-
-  tooling:
-    '@antfu/ni': ^30.6.0
-    '@antfu/utils': ^9.3.0
-    pnpm: ^12.16.1
 
   types:
     '@types/node': ^26.6.6

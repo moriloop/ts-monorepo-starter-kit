@@ -7,7 +7,8 @@ export default antfu(
     pnpm: true,
     antislop: true,
     ignores: [
-      // eslint ignore globs here
+      '**/dist/**',
+      '**/coverage/**',
     ],
   },
   {

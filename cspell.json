@@ -10,10 +10,10 @@
   ],
   "dictionaries": ["project-words"],
   "ignorePaths": [
-    "CHANGELOG.md",
-    "README.md",
+    "**/CHANGELOG.md",
+    "**/README.md",
     "node_modules",
-    "dist",
+    "**/dist",
     "*-lock.yaml",
     "/project-words.txt"
   ]
